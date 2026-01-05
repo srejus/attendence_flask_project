@@ -4,7 +4,7 @@ set -e
 # =========================
 # Static Configuration
 # =========================
-BASE_DIR="/home/ubuntu/attendance_base/attendence_flask_project"
+BASE_DIR="/home/administrator/attendance_base/attendence_flask_project"
 VENV_BIN="$BASE_DIR/venv/bin"
 PORT=8000
 
