@@ -8,7 +8,7 @@ BASE_DIR1="/home/administrator/attendance_base"
 VENV_BIN="$BASE_DIR1/venv/bin"
 BASE_DIR="$BASE_DIR1/attendence_flask_project"
 
-PORT=8000
+PORT=7020
 FLASK_APP_MODULE="app:app"
 
 WORKERS=3
@@ -78,7 +78,7 @@ stop_server() {
     fi
 
     rm -f "$PID_FILE"
-    echo "Server stopped."
+    echo "Server stopped."a
 }
 
 # =========================
