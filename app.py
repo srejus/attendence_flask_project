@@ -135,6 +135,6 @@ def ws_chat(ws):
 if __name__ == "__main__":
     app.run(
         host="0.0.0.0",
-        port=7020,
+        port=7025,
         debug=True
     )
