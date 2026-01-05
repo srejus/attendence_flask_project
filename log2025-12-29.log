@@ -1,0 +1,17 @@
+2025-12-29 16:29:14,742 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:7788
+ * Running on http://192.168.1.4:7788
+2025-12-29 16:29:14,743 [INFO] [33mPress CTRL+C to quit[0m
+2025-12-29 16:29:14,747 [INFO]  * Restarting with stat
+2025-12-29 16:29:16,580 [WARNING]  * Debugger is active!
+2025-12-29 16:29:16,591 [INFO]  * Debugger PIN: 677-314-678
+2025-12-29 16:29:23,869 [INFO] 127.0.0.1 - - [29/Dec/2025 16:29:23] "GET / HTTP/1.1" 200 -
+2025-12-29 16:29:23,951 [INFO] 127.0.0.1 - - [29/Dec/2025 16:29:23] "[33mGET /static/js/locales/bootstrap-datetimepicker.zh-CN.js HTTP/1.1[0m" 404 -
+2025-12-29 16:29:24,180 [INFO] 127.0.0.1 - - [29/Dec/2025 16:29:24] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 200 -
+2025-12-29 16:29:24,188 [INFO] 127.0.0.1 - - [29/Dec/2025 16:29:24] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 -
+2025-12-29 16:29:24,227 [INFO] 127.0.0.1 - - [29/Dec/2025 16:29:24] "GET /static/js/bootstrap-datetimepicker.min.js HTTP/1.1" 200 -
+2025-12-29 16:29:24,359 [INFO] 127.0.0.1 - - [29/Dec/2025 16:29:24] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+2025-12-29 16:29:24,634 [INFO] 127.0.0.1 - - [29/Dec/2025 16:29:24] "[35m[1mGET /emps?pn=1 HTTP/1.1[0m" 500 -
+2025-12-29 16:29:24,641 [INFO] 127.0.0.1 - - [29/Dec/2025 16:29:24] "[35m[1mGET /device HTTP/1.1[0m" 500 -
+2025-12-29 16:29:24,716 [INFO] 127.0.0.1 - - [29/Dec/2025 16:29:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -

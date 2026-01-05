@@ -1,0 +1,53 @@
+import requests
+import logging
+from typing import Dict
+
+# -------------------------------------------------
+# CONFIG – change only these
+# -------------------------------------------------
+DJANGO_WEBHOOK_URL = "http://127.0.0.1:8000/webhook"
+DJANGO_SHARED_SECRET = "CHANGE_THIS_SECRET"
+TIMEOUT_SECONDS = 2
+
+logger = logging.getLogger(__name__)
+
+
+def send_attendance_webhook(payload: Dict) -> bool:
+    """
+    Sends attendance data to Django via HTTP webhook.
+
+    This function:
+    - NEVER raises exceptions to caller
+    - NEVER blocks longer than TIMEOUT_SECONDS
+    - Returns True on success, False on failure
+
+    Safe to call inside get_attendance().
+    """
+
+    try:
+        logger.info("[Webhook] Sending attendance payload: %s", payload)
+
+        response = requests.post(
+            DJANGO_WEBHOOK_URL,
+            json=payload,
+            headers={
+                "Authorization": f"Bearer {DJANGO_SHARED_SECRET}",
+                "Content-Type": "application/json",
+            },
+            timeout=TIMEOUT_SECONDS,
+        )
+
+        if response.status_code != 200:
+            logger.error(
+                "[Webhook] Django rejected request | status=%s response=%s",
+                response.status_code,
+                response.text,
+            )
+            return False
+
+        logger.info("[Webhook] Attendance forwarded successfully")
+        return True
+
+    except Exception as exc:
+        logger.exception("[Webhook] Failed to send attendance webhook")
+        return False
