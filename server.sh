@@ -4,8 +4,9 @@ set -e
 # =========================
 # Static Configuration
 # =========================
+BASE_DIR1="/home/administrator/attendance_base"
+VENV_BIN="$BASE_DIR1/venv/bin"
 BASE_DIR="/home/administrator/attendance_base/attendence_flask_project"
-VENV_BIN="$BASE_DIR/venv/bin"
 PORT=8000
 
 # Flask WSGI entry point
