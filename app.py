@@ -753,6 +753,38 @@ def handler(sock):
 
     finally:
         pass
+
+@app.route('/pub/api', methods=['POST'])
+def device_http_api():
+    try:
+        data = request.get_json(force=True)
+        print("DEVICE PUSH DATA:", data)
+
+        cmd = data.get("cmd") or data.get("ret")
+
+        if cmd == "reg":
+            return jsonify({
+                "ret": "reg",
+                "result": True,
+                "cloudtime": datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            })
+
+        if cmd == "sendlog":
+            # reuse your existing logic
+            get_attendance(data, None)
+            return jsonify({
+                "ret": "sendlog",
+                "result": True,
+                "cloudtime": datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            })
+
+        return jsonify({"result": True})
+
+    except Exception as e:
+        print("API ERROR:", e)
+        return jsonify({"result": False}), 500
+
+
 #region 功能函数
 from Models.DeviceStatus import DeviceStatus
 from web_socket.WebSocketPool import WebSocketPool
