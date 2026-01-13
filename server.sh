@@ -78,7 +78,7 @@ stop_server() {
     fi
 
     rm -f "$PID_FILE"
-    echo "Server stopped."a
+    echo "Server stopped."  # FIXED: Removed extra "a"
 }
 
 # =========================
