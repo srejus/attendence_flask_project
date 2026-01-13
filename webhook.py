@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 
 def send_attendance_webhook(payload: Dict) -> bool:
+    print("\n\n===Sending Webhook====\n\n")
     """
     Sends attendance data to Django via HTTP webhook.
 

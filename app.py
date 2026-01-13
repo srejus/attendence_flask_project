@@ -759,9 +759,9 @@ def handler(sock):
 def device_http_api():
     try:
         data = request.get_json(force=True)
-        print("DEVICE PUSH DATA:", data)
 
         cmd = data.get("cmd") or data.get("ret")
+        print("DEVICE PUSH DATA:", data," >> ",cmd)
 
         if cmd == "reg":
             return jsonify({
