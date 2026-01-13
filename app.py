@@ -15,7 +15,7 @@ from Helpers.log_conf import Logger
 
 from database import db,app
 from job.SendOrderJob import  SendOrderJob
-from .webhook import send_attendance_webhook
+from webhook import send_attendance_webhook
 #
 # os.environ["FLASK_ENV"] = "development"
 # os.environ["FLASK_DEBUG"] = "1"
