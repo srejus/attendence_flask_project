@@ -15,6 +15,7 @@ from Helpers.log_conf import Logger
 
 from database import db,app
 from job.SendOrderJob import  SendOrderJob
+from .webhook import send_attendance_webhook
 #
 # os.environ["FLASK_ENV"] = "development"
 # os.environ["FLASK_DEBUG"] = "1"
@@ -772,6 +773,7 @@ def device_http_api():
         if cmd == "sendlog":
             # reuse your existing logic
             get_attendance(data, None)
+            send_attendance_webhook(data)
             return jsonify({
                 "ret": "sendlog",
                 "result": True,
