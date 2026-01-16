@@ -500,7 +500,7 @@ def websock(sock):
         #sock.send(data)
 
 # @sock.route('/pub/chat')
-@sock.route('/pub/api')
+@sock.route('/pub/api', methods=['POST'])
 def handler(sock):
     try:
         while True:
