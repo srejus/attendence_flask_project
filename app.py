@@ -545,6 +545,7 @@ def handler(sock):
                             # sock.send(json.dumps({"ret": "reg", "result": False, "reason": 1}))
                             sock.send("{\"ret\":\"reg\",\"result\":false,\"reason\":1}")
                     elif cmd == "sendlog":
+                        print("\n\n===Main Func for Send Data===\n\n")
                         send_attendance_webhook(jsonMsg)
                         try:
                             # print("sendlog:" + str(jsonMsg))
