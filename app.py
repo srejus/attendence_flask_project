@@ -760,6 +760,7 @@ def handler(sock):
 @app.route('/pub/api', methods=['POST'])
 def device_http_api():
     try:
+        print('\n\n===API CALLED ==\n\n')
         data = request.get_json(force=True)
 
         cmd = data.get("cmd") or data.get("ret")
