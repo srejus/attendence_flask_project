@@ -776,7 +776,7 @@ def device_http_api():
         if cmd == "sendlog":
             # reuse your existing logic
             send_attendance_webhook(data)
-            get_attendance(data, None)
+            # get_attendance(data, None)
             return jsonify({
                 "ret": "sendlog",
                 "result": True,
