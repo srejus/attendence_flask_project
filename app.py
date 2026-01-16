@@ -499,7 +499,8 @@ def websock(sock):
         # sock.send(data[::-1])
         #sock.send(data)
 
-@sock.route('/pub/chat')
+# @sock.route('/pub/chat')
+@sock.route('/pub/api')
 def handler(sock):
     try:
         while True:
@@ -545,6 +546,7 @@ def handler(sock):
                             # sock.send(json.dumps({"ret": "reg", "result": False, "reason": 1}))
                             sock.send("{\"ret\":\"reg\",\"result\":false,\"reason\":1}")
                     elif cmd == "sendlog":
+                        send_attendance_webhook(jsonMsg)
                         try:
                             # print("sendlog:" + str(jsonMsg))
                             get_attendance(jsonMsg, sock)
@@ -755,7 +757,7 @@ def handler(sock):
     finally:
         pass
 
-@app.route('/pub/api', methods=['POST'])
+@app.route('/pub/api/1', methods=['POST'])
 def device_http_api():
     try:
         data = request.get_json(force=True)
