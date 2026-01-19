@@ -7,6 +7,8 @@ from typing import Dict
 # -------------------------------------------------
 DJANGO_WEBHOOK_URL = "http://77.93.152.241:9040/webhook"
 
+DJANGO_WEBHOOK_URL = "http://77.93.152.241:9099/webhook"
+
 # DJANGO_WEBHOOK_URL = "http://192.168.1.5:8000/webhook"
 DJANGO_SHARED_SECRET = "CHANGE_THIS_SECRET"
 TIMEOUT_SECONDS = 2
