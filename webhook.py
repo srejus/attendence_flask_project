@@ -48,7 +48,7 @@ def send_attendance_webhook(payload: Dict) -> bool:
                 response.text,
             )
             return False
-
+        print("WEBHOOK SENT SUCCESSFULLY===\n\n\n")
         logger.info("[Webhook] Attendance forwarded successfully")
         return True
 
