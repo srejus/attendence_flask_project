@@ -6,6 +6,8 @@ from typing import Dict
 # CONFIG – change only these
 # -------------------------------------------------
 DJANGO_WEBHOOK_URL = "http://77.93.152.241:9040/webhook"
+
+# DJANGO_WEBHOOK_URL = "http://192.168.1.5:8000/webhook"
 DJANGO_SHARED_SECRET = "CHANGE_THIS_SECRET"
 TIMEOUT_SECONDS = 2
 
@@ -13,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 
 def send_attendance_webhook(payload: Dict) -> bool:
-    print("\n\n===Sending Webhook====\n\n")
+    print(f"\n\n===Sending Webhook====>{DJANGO_WEBHOOK_URL}\n\n")
     """
     Sends attendance data to Django via HTTP webhook.
 
@@ -39,6 +41,7 @@ def send_attendance_webhook(payload: Dict) -> bool:
         )
 
         if response.status_code != 200:
+            print("WEBHOOK ERROR : ",response.text)
             logger.error(
                 "[Webhook] Django rejected request | status=%s response=%s",
                 response.status_code,
